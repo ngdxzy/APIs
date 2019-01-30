@@ -75,6 +75,7 @@ void RxIntr(void *CallBackRef)
 	{
 		Config->rxbuffer[Config->bytesReaded] = Xil_In8(Config->RxFifo);
 		Config->bytesReaded++;
+		Status = Xil_In8(Config->StatusReg);
 	}
 }
 void TxIntr(void *CallBackRef)
