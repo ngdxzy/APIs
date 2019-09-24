@@ -1,7 +1,7 @@
 /*
  * AxiUart.c
  *
- *  Created on: 2017Äê9ÔÂ28ÈÕ
+ *  Created on: 2017Ã„Ä™9Ã”Ã‚28ÄŒÅ
  *      Author: Administrator
  */
 
@@ -75,6 +75,7 @@ void RxIntr(void *CallBackRef)
 	{
 		Config->rxbuffer[Config->bytesReaded] = Xil_In8(Config->RxFifo);
 		Config->bytesReaded++;
+		Status = Xil_In8(Config->StatusReg);
 	}
 }
 void TxIntr(void *CallBackRef)
